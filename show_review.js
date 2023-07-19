@@ -29,7 +29,7 @@ function show(subjectId) {
     $("#textarea").append("<textarea readonly rows='" + 16 + "' cols='" + 60 + "''>" + json_review + " </textarea>");
   });
   $.getJSON("student.php", { method: "getReviewText", id: subjectId }, function (json) {
-    document.getElementById("reviewText").value = json
+    document.getElementById("textarea").value = json
   });
 }
 

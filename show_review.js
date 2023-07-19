@@ -39,4 +39,4 @@ $(function () {
   rv.showReview();
 });
 
-export {show};
+export { show };

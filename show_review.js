@@ -25,9 +25,6 @@ function show(subjectId) {
   $.getJSON("subject.php", { method: "getTitle", id: subjectId }, function (json_title) {
     $("#title").append("<h1> レビュー：" + json_title + " </h1>");
   });
-  $.getJSON("student.php", { method: "getReviewText", id: subjectId }, function (json_review) {
-    $("#textarea").append("<textarea readonly rows='" + 16 + "' cols='" + 60 + "''>" + json_review + " </textarea>");
-  });
   $.getJSON("student.php", { method: "getReviewText", id: subjectId }, function (json) {
     document.getElementById("reviewText").value = json
   });

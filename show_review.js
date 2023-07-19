@@ -27,12 +27,14 @@ function show(subjectId) {
   });
   $.getJSON("student.php", { method: "getReviewText", id: subjectId }, function (json_review) {
     $("#textarea").append("<textarea readonly rows='" + 16 + "' cols='" + 60 + "''>" + json_review + " </textarea>");
+  $.getJSON("student.php", { method: "getReviewText", id: subjectId }, function (json) {
+    document.getElementById("reviewText").value = json
   });
 }
 
 $(function () {
-  var rv = new ShowReview();
+  const rv = new ShowReview();
   rv.showReview();
 });
 
-export {show};
+export { show };
